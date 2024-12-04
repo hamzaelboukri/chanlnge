@@ -46,3 +46,52 @@ div2.addEventListener("click", function () {
     div2.style.display = "block";
     }
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+const texte = document.getElementById('texte');
+
+texte.onmouseover = () => {
+    texte.textContent = "hamza";
+};
+
+texte.onmouseout = () => {
+    texte.textContent = "regex.";
+};
+
+
+
+
+
+
+
+
+const inputField = document.getElementById('carcter');
+const errorMessage = document.getElementById('error');
+const validateButton = document.getElementById('btn');
+
+validateButton.addEventListener('click', () => {
+    if (inputField.value.length < 5) {
+        errorMessage.textContent = "oh nice";
+    } else {
+        errorMessage.textContent = "";
+        alert("must  < 5");
+    }
+});
+
+
+
+
+
+
+
