@@ -91,6 +91,67 @@ validateButton.addEventListener('click', () => {
 
 
 
+const div4=document.getElementById("divclass") 
+const text =document.getElementById('btn1')
+
+text.addEventListener('click',function () {
+    div4.classList.add('divclass');
+    
+})
+
+
+const input = document.getElementById("itemInput");
+const addButton = document.getElementById("addButton");
+const itemList = document.getElementById("itemList");
+
+function addItem() {
+    const li = document.createElement("li");
+    li.textContent = input.value;
+    itemList.appendChild(li);
+    input.value = ""; 
+    
+    const deleteButton = document.createElement("button");
+    deleteButton.textContent = "Supprimer";
+    deleteButton.style.marginLeft = "10px";
+
+    deleteButton.addEventListener("click", () => {
+        li.remove(); 
+    });
+
+    li.appendChild(deleteButton);
+
+    itemList.appendChild(li);
+
+}
+addButton.addEventListener("click", addItem);
+input.addEventListener("keypress", (e) => {
+   
+        addItem();
+    
+});
+
+
+const images = document.querySelectorAll(".gallery img");
+const modal = document.getElementById("modal");
+const modalImage = document.getElementById("modalImage");
+const closeModal = document.getElementById("closeModal");
+
+images.forEach(image => {
+    image.addEventListener("click", () => {
+        modal.style.display = "flex";
+        modalImage.src = image.src; 
+    });
+});
+
+closeModal.addEventListener("click", () => {
+    modal.style.display = "none";
+});
+
+modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+        modal.style.display = "none";
+    }
+});
 
 
 
